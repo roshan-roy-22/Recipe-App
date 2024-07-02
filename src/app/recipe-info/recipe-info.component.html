@@ -1,0 +1,40 @@
+
+<div class="grid grid-cols-3 px-11">
+  <div class="p-6">
+    <img class="h-[400px]" [src]="recipeInfo.image" alt="" />
+  </div>
+  <div class="col-span-2 p-6">
+    <h1 class="text-6xl mb-5">{{ recipeInfo.name }}</h1>
+    <div  *ngIf="recipeInfo.tags && recipeInfo.tags.length > 0">
+      <span  class="" *ngFor="let tag of recipeInfo.tags" class="tag">
+        <span class="bg-[#fffdfd] border m-1 px-3 py-2 rounded-lg italic">#{{ tag }}</span>
+      </span>
+    </div>
+    <div class="my-3 flex gap-4 text-lg">
+        <button class="px-2 py-1 border rounded-md"><i class="fa-solid fa-star text-yellow-500"></i>{{recipeInfo.rating}} Ratings</button>
+        <button class="px-2 py-1 border rounded-md"><i class="fa-regular fa-user text-blue-500"></i>{{recipeInfo.reviewCount}} Reviews</button>
+    </div>
+    <div class="my-3 flex gap-4 text-lg">
+        <button class="px-2 py-1 border rounded-md"><i class="fa-solid fa-fire-burner"></i> {{recipeInfo.prepTimeMinutes}} mins for Preparation </button>
+        <button class="px-2 py-1 border rounded-md"><i class="fa-solid fa-utensils me-2"></i>{{recipeInfo.cookTimeMinutes}} mins for Cooking</button>
+    </div>
+    <div class="my-3 flex gap-4 text-lg">
+        <button class="px-2 py-1 border rounded-md"><i class="fa-solid fa-fire"></i> {{recipeInfo.caloriesPerServing}} calories per Serving </button>
+        <button class="px-2 py-1 border rounded-md"><i class="fa-solid fa-globe me-2"></i>{{recipeInfo.cuisine}} Cuisine</button>
+    </div>
+    <h1 class="font-bold my-2">Ingredients:</h1>
+       <div class="flex flex-wrap gap-1">
+        <div  class="flex" *ngFor="let ingredient of recipeInfo.ingredients" class="tag">
+            <button class="bg-[#fffdfd] border  px-3 py-2 rounded-lg italic ">{{ ingredient }}</button>
+          </div>
+       </div>
+      
+   </div>
+</div>
+<div class="my-4">
+    <h1 class="text-center text-3xl font-medium">Instructions for Cooking</h1>
+    <div *ngFor="let instruction of recipeInfo.instructions">
+       <div class="bg-slate-100 px-4 py-3 border max-w-2xl mx-auto my-2"><i class="fa-solid fa-stop me-2"></i>{{instruction}}</div>
+    </div>
+</div>
+

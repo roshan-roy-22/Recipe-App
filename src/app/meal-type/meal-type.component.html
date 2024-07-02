@@ -1,0 +1,8 @@
+
+
+<h1 style="font-style: italic;" class="text-center text-4xl capitalize my-2 font-bold ">{{mealType}} Foods Recipes</h1>
+
+<div class="flex flex-wrap  gap-12 ">
+    <app-recipe-card *ngFor="let recipe of recipeInfo" [recipe]="recipe"></app-recipe-card>
+</div>
+

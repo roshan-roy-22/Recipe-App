@@ -1,0 +1,17 @@
+
+<nav class="flex justify-between items-center px-5 py-5  shadow-md">
+    <div>
+        <img routerLink="" class="h-11 cursor-pointer" [src]="logoURL" alt="">
+    </div>
+    <div class="flex gap-8 text-xl uppercase font-semibold">
+        <a routerLink="">Home</a>
+        <a>About</a>
+        <a routerLink="/recipe">Recipes</a>
+    </div>
+    <div class="flex gap-3 text-xl items-center">
+        <button routerLink="/favourite"  class="px-3 py-1 border rounded-md"><i class="fa-solid fa-heart me-1 text-red-600"></i>Favourites {{favouriteCount}}</button>
+        <button *ngIf="!loginUsername" class="px-3 py-1 border rounded-md" routerLink="/login" >Log-in</button>
+        <button *ngIf="loginUsername" class="px-3 py-1 border rounded-md"><i class="fa-regular fa-user me-1"></i>{{loginUsername}}</button>
+        <button (click)="logout()" *ngIf="loginUsername" class="px-3 py-1 border rounded-md"  >Log-out</button>
+    </div>
+</nav>

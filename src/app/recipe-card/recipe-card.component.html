@@ -1,0 +1,11 @@
+<div  class="card my-4 mx-3 cursor-pointer">
+    <div routerLink='/recipe-info/{{recipe.id}}'>
+        <img [src]="recipe.image" alt="">
+    <p class="font-semibold text-lg">{{recipe.name.slice(0,20)}}</p>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-lg font-semibold ms-2"><i class="fa-solid fa-star text-yellow-400"></i>{{recipe.rating}}</span>
+      <button (click)="adddToFavourite(recipe)" class="px-2 py-1 border rounded"><i class="fa-solid fa-heart text-red-500 me-2"></i>Add to fav</button>
+    </div>
+  </div>
+  
